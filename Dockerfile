@@ -30,5 +30,8 @@ RUN apt-get clean && rm -rf /var/lib/apt/lists/* /bitcoin
 # Expose all Bitcoin ports
 EXPOSE 8332 8333 18332 18333 18444 18443
 
+# Set permissions to root
+USER root
+
 # Set the entry point
 CMD ["bitcoind", "-printtoconsole"]
